@@ -21,7 +21,7 @@ jobs:
           files_ignore: .github
           since_last_remote_commit: false
       - name: Run LookML Linter
-        uses: rbob86/lookml-linter@v5
+        uses: jorgeestebanm/lookml-linter@v6.1-beta
         with:
           filepaths: ${{ steps.changed-files.outputs.all_changed_files }}
           saveOutputToFile: false
