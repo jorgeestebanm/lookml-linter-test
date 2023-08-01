@@ -1,5 +1,7 @@
 - rule: field_requires_description
   severity: warning
+- rule: field_description_requires_minimum_length
+  severity: warning
 - rule: view_with_many_fields_requires_fields_hidden_by_default
   severity: warning
 - rule: view_with_dimensions_and_measures_has_one_primary_key
@@ -13,6 +15,8 @@
 - rule: explore_joins_require_relationship
   severity: error
 - rule: explore_requires_description
+  severity: error
+- rule: explore_description_requires_minimum_length
   severity: error
 - rule: explore_joins_contain_many_to_many_relationship
   severity: ignore
