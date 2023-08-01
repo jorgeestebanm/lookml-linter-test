@@ -41,6 +41,7 @@ view: agg_guild_2 {
   measure: total_num_guilds {
     type: sum
     sql: ${num_guilds} ;;
+    description: "Totals"
   }
 
   dimension: timescale {
