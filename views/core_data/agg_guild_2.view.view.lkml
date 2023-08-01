@@ -31,6 +31,7 @@ view: agg_guild_2 {
   dimension: num_guilds {
     type: number
     sql: ${TABLE}.num_guilds ;;
+    description: "Number of guilds"
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
