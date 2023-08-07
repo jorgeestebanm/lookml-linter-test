@@ -1,13 +1,16 @@
 name: Lint Project
 
 on:
+  push:
+    branches-ignore:
+      - "master"
   pull_request:
     branches: [master, main]
 
 jobs:
   lookml_linter:
     runs-on: ubuntu-latest
-    name: LookML Linter
+    name: LookML Linter writing logs to file
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -19,13 +22,8 @@ jobs:
         uses: tj-actions/changed-files@v35
         with:
           files_ignore: .github
-          since_last_remote_commit: false
+          since_last_remote_commit: true
       - name: Run LookML Linter
         uses: jorgeestebanm/lookml-linter@v7.0
         with:
           filepaths: ${{ steps.changed-files.outputs.all_changed_files }}
-          saveOutputToFile: false
-      - uses: mshick/add-pr-comment@v2
-        with:
-          message: "${{ env.error_log }} \n **Errors? See** https://www.notion.so/discordapp/Looker-Linter-Guide-797453ae9eea44b980efb459af0e292d"
-        if: (failure() || success()) && github.event_name == 'pull_request' && env.error_log != ''
