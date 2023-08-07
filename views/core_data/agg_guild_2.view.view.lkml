@@ -10,6 +10,8 @@ view: agg_guild_2 {
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
+  description: "short"
+
   dimension_group: day_pt {
     type: time
     timeframes: [
