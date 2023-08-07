@@ -34,6 +34,7 @@ persist_with: cost_to_serve_default_datagroup
 explore: dashboard_ready_cost_breakdown  {
   group_label: "Cost-to-Serve"
   label: "[CTS] Utilization Breakdown"
+  description: "short"
 }
 
 explore: gke_node_view  {
