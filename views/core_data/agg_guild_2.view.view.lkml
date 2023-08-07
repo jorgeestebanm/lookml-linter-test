@@ -54,5 +54,6 @@ view: agg_guild_2 {
   dimension: xag_segment {
     type: string
     sql: ${TABLE}.xag_segment ;;
+    description: "short"
   }
 }
